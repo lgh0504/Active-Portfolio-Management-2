@@ -2,11 +2,11 @@ from math import sqrt
 
 def information_ratio(ic, br):
     '''
-    FUNDAMENTAL LAW OF ACTIVE MANAGEMENT: IR = IC * sqrt(BR)
-    INFORMATION RATIO (IR): ratio of expected residual return to its volatility.
-    INFORMATION COEFFICIENT (IC): our skill in forecasting residual return,
+    Fundamental law of active management: IR = IC * sqrt(BR)
+    Information Ratio (IR): ratio of expected residual return to its volatility.
+    Information Coefficient (IC): our skill in forecasting residual return,
     i.e. correlation between forecasts and the eventual returns.
-    BREADTH (BR): number of times per year we can use our skill.
+    Breadth (BR): number of times per year we can use our skill.
     '''
     return ic * sqrt(br)
 
