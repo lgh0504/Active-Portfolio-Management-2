@@ -1,5 +1,4 @@
-from math import sqrt
-from numpy import cov, var
+import numpy as np
 
 def alpha(ret_p, ret_b):
     '''
@@ -8,7 +7,7 @@ def alpha(ret_p, ret_b):
 
     ALPHA = Rp - Rb
     '''
-    return ret_p - ret_b
+    return np.subtract(ret_p, ret_b)
 
 def beta(ret_p, ret_b):
     '''
@@ -16,8 +15,8 @@ def beta(ret_p, ret_b):
 
     BETA = Cov(Rp, Rb) / Var(Rb)
     '''
-    covariance = cov(ret_p, ret_b)
-    benchmark_variance = var(ret_b)
+    covariance = np.cov(ret_p, ret_b)
+    benchmark_variance = np.var(ret_b)
     return covariance / benchmark_variance
 
 def information_ratio(ic, br):
@@ -31,7 +30,7 @@ def information_ratio(ic, br):
     i.e. correlation between forecasts and the eventual returns.
     Breadth (BR): number of times per year we can use our skill.
     '''
-    return ic * sqrt(br)
+    return ic * br ** 0.5
 
 def alpha_theoretical(volatility, ic, score):
     '''
