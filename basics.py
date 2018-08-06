@@ -15,7 +15,7 @@ def beta(ret_p, ret_b):
 
     BETA = Cov(Rp, Rb) / Var(Rb)
     '''
-    covariance = np.cov(ret_p, ret_b)
+    covariance = np.cov(ret_p, ret_b)[0][1]
     benchmark_variance = np.var(ret_b)
     return covariance / benchmark_variance
 
